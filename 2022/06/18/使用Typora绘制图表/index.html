@@ -121,6 +121,16 @@
         </li>
         
         
+        <li class="menu-item menu-item-tags">
+          <a href="/LapplandSP/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
         <li class="menu-item menu-item-links">
           <a href="/LapplandSP/links">
             
@@ -229,7 +239,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/LapplandSP/2022/06/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A3%B9%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="title">数据结构-贰：表</a>
+                <a href="/LapplandSP/2022/06/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A3%B9%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="title">数据结构-壹：线性表</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-14T15:22:26.000Z" itemprop="datePublished">2022-06-14</time>
@@ -244,7 +254,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/LapplandSP/2022/06/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9B%B6%EF%BC%9A%E7%AE%97%E6%B3%95/" class="title">数据结构-壹：算法</a>
+                <a href="/LapplandSP/2022/06/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9B%B6%EF%BC%9A%E7%AE%97%E6%B3%95/" class="title">数据结构-零：算法</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-14T15:21:42.000Z" itemprop="datePublished">2022-06-14</time>
@@ -311,41 +321,132 @@
 <ul>
 <li>
 <p><strong>序列图</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">%% 这里是注释可以随便写</span><br><span class="line">  sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;Bob: Hello Bob, how are you?</span><br><span class="line">    alt is sick</span><br><span class="line">    Bob-&gt;&gt;Alice: Not so good :(</span><br><span class="line">    else is well</span><br><span class="line">    Bob-&gt;&gt;Alice: Feeling fresh like a daisy</span><br><span class="line">    end</span><br><span class="line">    opt Extra response</span><br><span class="line">    Bob-&gt;&gt;Alice: Thanks for asking</span><br><span class="line">    end</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">%% 这里是注释可以随便写</span><br><span class="line">  sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;Bob: Hello Bob, how are you?</span><br><span class="line">    alt is sick</span><br><span class="line">    Bob-&gt;&gt;Alice: Not so good :(</span><br><span class="line">    else is well</span><br><span class="line">    Bob-&gt;&gt;Alice: Feeling fresh like a daisy</span><br><span class="line">    end</span><br><span class="line">    opt Extra response</span><br><span class="line">    Bob-&gt;&gt;Alice: Thanks for asking</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre class=&quot;mermaid&quot;&gt;  %% 这里是注释可以随便写</span><br><span class="line">  sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;Bob: Hello Bob, how are you?</span><br><span class="line">    alt is sick</span><br><span class="line">    Bob-&gt;&gt;Alice: Not so good :(</span><br><span class="line">    else is well</span><br><span class="line">    Bob-&gt;&gt;Alice: Feeling fresh like a daisy</span><br><span class="line">    end</span><br><span class="line">    opt Extra response</span><br><span class="line">    Bob-&gt;&gt;Alice: Thanks for asking</span><br><span class="line">    end&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">  %% 这里是注释可以随便写
+  sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+    Bob->>Alice: Not so good :(
+    else is well
+    Bob->>Alice: Feeling fresh like a daisy
+    end
+    opt Extra response
+    Bob->>Alice: Thanks for asking
+    end</pre>
 </li>
 <li>
 <p><strong>流程图</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">graph LR</span><br><span class="line">A[Hard edge] --&gt;B(Round edge)</span><br><span class="line">    B --&gt; C&#123;Decision&#125;</span><br><span class="line">    C --&gt;|One| D[Result one]</span><br><span class="line">    C --&gt;|Two| E[Result two]</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[Hard edge] --&gt;B(Round edge)</span><br><span class="line">    B --&gt; C&#123;Decision&#125;</span><br><span class="line">    C --&gt;|One| D[Result one]</span><br><span class="line">    C --&gt;|Two| E[Result two]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre class=&quot;mermaid&quot;&gt;  graph LR</span><br><span class="line">A[Hard edge] --&gt;B(Round edge)</span><br><span class="line">    B --&gt; C&#123;Decision&#125;</span><br><span class="line">    C --&gt;|One| D[Result one]</span><br><span class="line">    C --&gt;|Two| E[Result two]&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">  graph LR
+A[Hard edge] -->B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]</pre>
 <p>“LR” 表示该流程图是从左（L）到右（R）的顺序生成</p>
 <p>从上到下参数为 “TB”</p>
 </li>
 <li>
 <p><strong>树图</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">graph TB</span><br><span class="line"></span><br><span class="line">A((A))</span><br><span class="line">B((B))</span><br><span class="line">C((C))</span><br><span class="line">D((D))</span><br><span class="line">E((E))</span><br><span class="line">F((F))</span><br><span class="line">G((G))</span><br><span class="line">H((H))</span><br><span class="line">I((I))</span><br><span class="line">J((J)) </span><br><span class="line">K((K))</span><br><span class="line">A--&gt;B</span><br><span class="line">A--&gt;C</span><br><span class="line">A--&gt;D</span><br><span class="line">E--&gt;F</span><br><span class="line">G--&gt;H</span><br><span class="line">G--&gt;I</span><br><span class="line">I--&gt;J</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line"></span><br><span class="line">A((A))</span><br><span class="line">B((B))</span><br><span class="line">C((C))</span><br><span class="line">D((D))</span><br><span class="line">E((E))</span><br><span class="line">F((F))</span><br><span class="line">G((G))</span><br><span class="line">H((H))</span><br><span class="line">I((I))</span><br><span class="line">J((J)) </span><br><span class="line">K((K))</span><br><span class="line">A--&gt;B</span><br><span class="line">A--&gt;C</span><br><span class="line">A--&gt;D</span><br><span class="line">E--&gt;F</span><br><span class="line">G--&gt;H</span><br><span class="line">G--&gt;I</span><br><span class="line">I--&gt;J</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre class=&quot;mermaid&quot;&gt;  graph TB</span><br><span class="line"></span><br><span class="line">A((A))</span><br><span class="line">B((B))</span><br><span class="line">C((C))</span><br><span class="line">D((D))</span><br><span class="line">E((E))</span><br><span class="line">F((F))</span><br><span class="line">G((G))</span><br><span class="line">H((H))</span><br><span class="line">I((I))</span><br><span class="line">J((J)) </span><br><span class="line">K((K))</span><br><span class="line">A--&gt;B</span><br><span class="line">A--&gt;C</span><br><span class="line">A--&gt;D</span><br><span class="line">E--&gt;F</span><br><span class="line">G--&gt;H</span><br><span class="line">G--&gt;I</span><br><span class="line">I--&gt;J&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">  graph TB
+
+A((A))
+B((B))
+C((C))
+D((D))
+E((E))
+F((F))
+G((G))
+H((H))
+I((I))
+J((J)) 
+K((K))
+A-->B
+A-->C
+A-->D
+E-->F
+G-->H
+G-->I
+I-->J</pre>
 <p>其中，A((B))代表一个结点，A类似于key，而B类似于value。</p>
 </li>
 <li>
 <p><strong>甘特图</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">%% Example with selection of syntaxes</span><br><span class="line">        gantt</span><br><span class="line">        dateFormat  YYYY-MM-DD</span><br><span class="line">        title Adding GANTT diagram functionality to mermaid</span><br><span class="line"></span><br><span class="line">        section A section</span><br><span class="line">        Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">        Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">        Future task               :         des3, after des2, 5d</span><br><span class="line">        Future task2               :         des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">        section Critical tasks</span><br><span class="line">        Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">        Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">        Create tests for parser             :crit, active, 3d</span><br><span class="line">        Future task in critical line        :crit, 5d</span><br><span class="line">        Create tests for renderer           :2d</span><br><span class="line">        Add to mermaid                      :1d</span><br><span class="line"></span><br><span class="line">        section Documentation</span><br><span class="line">        Describe gantt syntax               :active, a1, after des1, 3d</span><br><span class="line">        Add gantt diagram to demo page      :after a1  , 20h</span><br><span class="line">        Add another diagram to demo page    :doc1, after a1  , 48h</span><br><span class="line"></span><br><span class="line">        section Last section</span><br><span class="line">        Describe gantt syntax               :after doc1, 3d</span><br><span class="line">        Add gantt diagram to demo page      : 20h</span><br><span class="line">        Add another diagram to demo page    : 48h</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">%% Example with selection of syntaxes</span><br><span class="line">        gantt</span><br><span class="line">        dateFormat  YYYY-MM-DD</span><br><span class="line">        title Adding GANTT diagram functionality to mermaid</span><br><span class="line"></span><br><span class="line">        section A section</span><br><span class="line">        Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">        Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">        Future task               :         des3, after des2, 5d</span><br><span class="line">        Future task2               :         des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">        section Critical tasks</span><br><span class="line">        Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">        Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">        Create tests for parser             :crit, active, 3d</span><br><span class="line">        Future task in critical line        :crit, 5d</span><br><span class="line">        Create tests for renderer           :2d</span><br><span class="line">        Add to mermaid                      :1d</span><br><span class="line"></span><br><span class="line">        section Documentation</span><br><span class="line">        Describe gantt syntax               :active, a1, after des1, 3d</span><br><span class="line">        Add gantt diagram to demo page      :after a1  , 20h</span><br><span class="line">        Add another diagram to demo page    :doc1, after a1  , 48h</span><br><span class="line"></span><br><span class="line">        section Last section</span><br><span class="line">        Describe gantt syntax               :after doc1, 3d</span><br><span class="line">        Add gantt diagram to demo page      : 20h</span><br><span class="line">        Add another diagram to demo page    : 48h</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre class=&quot;mermaid&quot;&gt;  %% Example with selection of syntaxes</span><br><span class="line">        gantt</span><br><span class="line">        dateFormat  YYYY-MM-DD</span><br><span class="line">        title Adding GANTT diagram functionality to mermaid</span><br><span class="line"></span><br><span class="line">        section A section</span><br><span class="line">        Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">        Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">        Future task               :         des3, after des2, 5d</span><br><span class="line">        Future task2               :         des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">        section Critical tasks</span><br><span class="line">        Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">        Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">        Create tests for parser             :crit, active, 3d</span><br><span class="line">        Future task in critical line        :crit, 5d</span><br><span class="line">        Create tests for renderer           :2d</span><br><span class="line">        Add to mermaid                      :1d</span><br><span class="line"></span><br><span class="line">        section Documentation</span><br><span class="line">        Describe gantt syntax               :active, a1, after des1, 3d</span><br><span class="line">        Add gantt diagram to demo page      :after a1  , 20h</span><br><span class="line">        Add another diagram to demo page    :doc1, after a1  , 48h</span><br><span class="line"></span><br><span class="line">        section Last section</span><br><span class="line">        Describe gantt syntax               :after doc1, 3d</span><br><span class="line">        Add gantt diagram to demo page      : 20h</span><br><span class="line">        Add another diagram to demo page    : 48h&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">  %% Example with selection of syntaxes
+        gantt
+        dateFormat  YYYY-MM-DD
+        title Adding GANTT diagram functionality to mermaid
+
+        section A section
+        Completed task            :done,    des1, 2014-01-06,2014-01-08
+        Active task               :active,  des2, 2014-01-09, 3d
+        Future task               :         des3, after des2, 5d
+        Future task2               :         des4, after des3, 5d
+
+        section Critical tasks
+        Completed task in the critical line :crit, done, 2014-01-06,24h
+        Implement parser and jison          :crit, done, after des1, 2d
+        Create tests for parser             :crit, active, 3d
+        Future task in critical line        :crit, 5d
+        Create tests for renderer           :2d
+        Add to mermaid                      :1d
+
+        section Documentation
+        Describe gantt syntax               :active, a1, after des1, 3d
+        Add gantt diagram to demo page      :after a1  , 20h
+        Add another diagram to demo page    :doc1, after a1  , 48h
+
+        section Last section
+        Describe gantt syntax               :after doc1, 3d
+        Add gantt diagram to demo page      : 20h
+        Add another diagram to demo page    : 48h</pre>
 </li>
 <li>
 <p><strong>类图</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">classDiagram</span><br><span class="line">      Animal &lt;|-- Duck</span><br><span class="line">      Animal &lt;|-- Fish</span><br><span class="line">      Animal &lt;|-- Zebra</span><br><span class="line">      Animal : +int age</span><br><span class="line">      Animal : +String gender</span><br><span class="line">      Animal: +isMammal()</span><br><span class="line">      Animal: +mate()</span><br><span class="line">      class Duck&#123;</span><br><span class="line">          +String beakColor</span><br><span class="line">          +swim()</span><br><span class="line">          +quack()</span><br><span class="line">      &#125;</span><br><span class="line">      class Fish&#123;</span><br><span class="line">          -int sizeInFeet</span><br><span class="line">          -canEat()</span><br><span class="line">      &#125;</span><br><span class="line">      class Zebra&#123;</span><br><span class="line">          +bool is_wild</span><br><span class="line">          +run()</span><br><span class="line">      &#125;</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">      Animal &lt;|-- Duck</span><br><span class="line">      Animal &lt;|-- Fish</span><br><span class="line">      Animal &lt;|-- Zebra</span><br><span class="line">      Animal : +int age</span><br><span class="line">      Animal : +String gender</span><br><span class="line">      Animal: +isMammal()</span><br><span class="line">      Animal: +mate()</span><br><span class="line">      class Duck&#123;</span><br><span class="line">          +String beakColor</span><br><span class="line">          +swim()</span><br><span class="line">          +quack()</span><br><span class="line">      &#125;</span><br><span class="line">      class Fish&#123;</span><br><span class="line">          -int sizeInFeet</span><br><span class="line">          -canEat()</span><br><span class="line">      &#125;</span><br><span class="line">      class Zebra&#123;</span><br><span class="line">          +bool is_wild</span><br><span class="line">          +run()</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre class=&quot;mermaid&quot;&gt;  classDiagram</span><br><span class="line">      Animal &lt;|-- Duck</span><br><span class="line">      Animal &lt;|-- Fish</span><br><span class="line">      Animal &lt;|-- Zebra</span><br><span class="line">      Animal : +int age</span><br><span class="line">      Animal : +String gender</span><br><span class="line">      Animal: +isMammal()</span><br><span class="line">      Animal: +mate()</span><br><span class="line">      class Duck&#123;</span><br><span class="line">          +String beakColor</span><br><span class="line">          +swim()</span><br><span class="line">          +quack()</span><br><span class="line">      &#125;</span><br><span class="line">      class Fish&#123;</span><br><span class="line">          -int sizeInFeet</span><br><span class="line">          -canEat()</span><br><span class="line">      &#125;</span><br><span class="line">      class Zebra&#123;</span><br><span class="line">          +bool is_wild</span><br><span class="line">          +run()</span><br><span class="line">      &#125;&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">  classDiagram
+      Animal <|-- Duck
+      Animal <|-- Fish
+      Animal <|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }</pre>
 </li>
 <li>
 <p><strong>状态图</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">stateDiagram</span><br><span class="line">    [*] --&gt; Still</span><br><span class="line">    Still --&gt; [*]</span><br><span class="line"></span><br><span class="line">    Still --&gt; Moving</span><br><span class="line">    Moving --&gt; Still</span><br><span class="line">    Moving --&gt; Crash</span><br><span class="line">    Crash --&gt; [*]</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram</span><br><span class="line">    [*] --&gt; Still</span><br><span class="line">    Still --&gt; [*]</span><br><span class="line"></span><br><span class="line">    Still --&gt; Moving</span><br><span class="line">    Moving --&gt; Still</span><br><span class="line">    Moving --&gt; Crash</span><br><span class="line">    Crash --&gt; [*]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre class=&quot;mermaid&quot;&gt;  stateDiagram</span><br><span class="line">    [*] --&gt; Still</span><br><span class="line">    Still --&gt; [*]</span><br><span class="line"></span><br><span class="line">    Still --&gt; Moving</span><br><span class="line">    Moving --&gt; Still</span><br><span class="line">    Moving --&gt; Crash</span><br><span class="line">    Crash --&gt; [*]&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">  stateDiagram
+    [*] --> Still
+    Still --> [*]
+
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash
+    Crash --> [*]</pre>
 </li>
 <li>
 <p><strong>饼图</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">pie</span><br><span class="line">    title Pie Chart</span><br><span class="line">    &quot;Dogs&quot; : 386</span><br><span class="line">    &quot;Cats&quot; : 85</span><br><span class="line">    &quot;Rats&quot; : 150 </span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line">    title Pie Chart</span><br><span class="line">    &quot;Dogs&quot; : 386</span><br><span class="line">    &quot;Cats&quot; : 85</span><br><span class="line">    &quot;Rats&quot; : 150 </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;pre class=&quot;mermaid&quot;&gt;  pie</span><br><span class="line">    title Pie Chart</span><br><span class="line">    &quot;Dogs&quot; : 386</span><br><span class="line">    &quot;Cats&quot; : 85</span><br><span class="line">    &quot;Rats&quot; : 150&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">  pie
+    title Pie Chart
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 150</pre>
 </li>
 </ul>
 <h1 id="typora-官方帮助文档"><a class="markdownIt-Anchor" href="#typora-官方帮助文档"></a> Typora 官方帮助文档</h1>
@@ -408,7 +509,7 @@
     
     
     <li class="next">
-      <a href="/LapplandSP/2022/06/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A3%B9%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8/" title="数据结构-贰：表"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/LapplandSP/2022/06/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A3%B9%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8/" title="数据结构-壹：线性表"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
