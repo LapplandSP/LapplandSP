@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: 数据结构 | Lappland</title>
-  <meta name="description" content="LapplandSP">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lappland">
-<meta property="og:url" content="https://lapplandsp.github.io/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+  <title>【数据结构·B】 矩阵的压缩存储 | Lappland</title>
+  <meta name="description" content="矩阵的压缩存储  预备内容   内存中二维数组的线性存储方法： 行优先：一行一行存，存完一行存下一行； b[i][j]的存储地址 &#x3D; LOC(起始地址) + (i * N + j) * sizeof(ElemType) 列优先：一列一列存，存完一列存下一列。 b[i][j]的存储地址 &#x3D; LOC(起始地址) + (j * M + i) * sizeof(ElemType)    对称矩阵 n阶方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【数据结构·B】 矩阵的压缩存储">
+<meta property="og:url" content="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/index.html">
 <meta property="og:site_name" content="Lappland">
-<meta property="og:description" content="LapplandSP">
+<meta property="og:description" content="矩阵的压缩存储  预备内容   内存中二维数组的线性存储方法： 行优先：一行一行存，存完一行存下一行； b[i][j]的存储地址 &#x3D; LOC(起始地址) + (i * N + j) * sizeof(ElemType) 列优先：一列一列存，存完一列存下一列。 b[i][j]的存储地址 &#x3D; LOC(起始地址) + (j * M + i) * sizeof(ElemType)    对称矩阵 n阶方">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-18T10:46:58.000Z">
+<meta property="article:modified_time" content="2022-06-18T10:47:30.784Z">
 <meta property="article:author" content="LapplandSP">
+<meta property="article:tag" content="数据结构 算法">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lapplandsp.github.io/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+  <link rel="canonical" href="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Lappland" type="application/atom+xml">
   
@@ -299,104 +302,220 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: 数据结构</h1>
-      <p class="text-muted hidden-xs">共 3 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/LapplandSP/tags">All</a></li>
-          
-          <li><a href="/LapplandSP/tags/数据结构-算法/">数据结构 算法</a></li>
-          
-          <li><a href="/LapplandSP/tags/数据结构/">数据结构</a></li>
-          
-          <li><a href="/LapplandSP/tags/Markdown/">Markdown</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-【数据结构·B】 矩阵的压缩存储" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
         
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2022-06-18T07:45:40.000Z" itemprop="datePublished">2022-06-18</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%BA%8C%E3%80%91%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/">【数据结构·二】栈、队列和数组</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="label label-default mb">数据结构</a>
-     
-     
-   </div>
-   
-</article>
+  
+    <h1 class="article-title" itemprop="name">
+      【数据结构·B】 矩阵的压缩存储
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" class="article-date">
+	  <time datetime="2022-06-18T10:46:58.000Z" itemprop="datePublished">2022-06-18</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/" rel="tag">数据结构 算法</a>
+  </span>
 
 
-</div>
+        
 
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2022-06-14T15:22:26.000Z" itemprop="datePublished">2022-06-14</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/LapplandSP/2022/06/14/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%80%E3%80%91%20%E7%BA%BF%E6%80%A7%E8%A1%A8/">【数据结构·一】 线性表</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="label label-default mb">数据结构</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2022-06-14T15:21:42.000Z" itemprop="datePublished">2022-06-14</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/LapplandSP/2022/06/14/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E9%9B%B6%E3%80%91%20%E7%AE%97%E6%B3%95/">【数据结构·零】 算法</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="label label-default mb">数据结构</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/#comments" class="article-comment-link">评论</a></span>
+        
       </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="矩阵的压缩存储"><a class="markdownIt-Anchor" href="#矩阵的压缩存储"></a> 矩阵的压缩存储</h1>
+<h2 id="预备内容"><a class="markdownIt-Anchor" href="#预备内容"></a> 预备内容</h2>
+<ul>
+<li>
+<p>内存中二维数组的线性存储方法：</p>
+<p>行优先：一行一行存，存完一行存下一行；</p>
+<p><code>b[i][j]的存储地址 = LOC(起始地址) + (i * N + j) * sizeof(ElemType)</code></p>
+<p>列优先：一列一列存，存完一列存下一列。</p>
+<p><code>b[i][j]的存储地址 = LOC(起始地址) + (j * M + i) * sizeof(ElemType)</code></p>
+</li>
+</ul>
+<h2 id="对称矩阵"><a class="markdownIt-Anchor" href="#对称矩阵"></a> 对称矩阵</h2>
+<p>n阶方阵中任意一个元素都有<code>a[i][j] = a[j][i]</code>，则该矩阵为对称矩阵。</p>
+<p>普通存储： n*n</p>
+<h3 id="策略"><a class="markdownIt-Anchor" href="#策略"></a> 策略</h3>
+<p>只存储主对角线+下三角区。</p>
+<p>按行优先原则将各元素存入一维数组中</p>
+<ul>
+<li>数组大小为 (1 + n) * n / 2</li>
+<li>可设计映射函数将二维坐标转义为线性位序
+<ul>
+<li>k = i*(i - 1)/2 + j -1		(i &gt; j)</li>
+</ul>
+</li>
+</ul>
+<h2 id="三角矩阵"><a class="markdownIt-Anchor" href="#三角矩阵"></a> 三角矩阵</h2>
+<p>除了主对角线和下三角区，其余的元素都相同。</p>
+<h3 id="策略-2"><a class="markdownIt-Anchor" href="#策略-2"></a> 策略</h3>
+<p>多一个存储单元存储相同的元素，一般放在最后面</p>
+<ul>
+<li>k = i*(i - 1)/2 + j -1		(i &gt; j)</li>
+<li>n * (n - 1) / 2                 (i &lt; j)</li>
+</ul>
+<h2 id="三对角矩阵"><a class="markdownIt-Anchor" href="#三对角矩阵"></a> 三对角矩阵</h2>
+<p>带状矩阵，当|i - j | &gt; 1时<code>a[i][j] = 0</code></p>
+<h3 id="策略-3"><a class="markdownIt-Anchor" href="#策略-3"></a> 策略</h3>
+<ul>
+<li>除了第一行和最后一行外，每行都是三个元素。[0]  -  [3n - 3]</li>
+<li>k = 2i + j - 3</li>
+</ul>
+<h2 id="稀疏矩阵"><a class="markdownIt-Anchor" href="#稀疏矩阵"></a> 稀疏矩阵</h2>
+<p>非零元素远少于矩阵元素个数</p>
+<h3 id="策略-4"><a class="markdownIt-Anchor" href="#策略-4"></a> 策略</h3>
+<ol>
+<li>
+<p>顺序存储 三元组（行、列、值）</p>
+<p>失去随机存储特性</p>
+</li>
+<li>
+<p>链式存储 十字链表法</p>
+<p>链表中存储矩阵的行、列；</p>
+<p>向右域存储列</p>
+<p>向下域存储行</p>
+</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" title="【数据结构·B】 矩阵的压缩存储" target="_blank" rel="external">https://lapplandsp.github.io/LapplandSP/2022/06/18/【数据结构·B】 矩阵的压缩存储/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/LapplandSP" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/LapplandSP/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/LapplandSP" target="_blank"><span class="text-dark">LapplandSP</span><small class="ml-1x">Student of TYUT</small></a></h3>
+        <div>烤盐中</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7A%E3%80%91%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" title="【数据结构·A】栈与队列的应用"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/LapplandSP/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/LapplandSP/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -451,6 +570,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
