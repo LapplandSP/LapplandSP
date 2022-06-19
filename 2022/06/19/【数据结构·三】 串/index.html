@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>【数据结构·B】 矩阵的压缩存储 | Lappland</title>
-  <meta name="description" content="矩阵的压缩存储  预备内容   内存中二维数组的线性存储方法： 行优先：一行一行存，存完一行存下一行； b[i][j]的存储地址 &#x3D; LOC(起始地址) + (i * N + j) * sizeof(ElemType) 列优先：一列一列存，存完一列存下一列。 b[i][j]的存储地址 &#x3D; LOC(起始地址) + (j * M + i) * sizeof(ElemType)    对称矩阵 n阶方">
+  <title>【数据结构·三】 串 | Lappland</title>
+  <meta name="description" content="串  串的定义 串即字符串，有零个或多个字符组成的有限序列。 S &#x3D; ‘a1a2a3…an’ (n &gt; 0)  S 为串名 边界符为引号或括号 字符序列为串值 n为串的长度 n &#x3D; 0时为空串  串是一种线性表，数据元素之间呈线性关系。 基本操作通常以子串为操作对象。  名词   子串 串中任意个连续字符组成的子序列。   主串 包含字串的串   字符在主串中的位置 字符在串中的序号。（从">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【数据结构·B】 矩阵的压缩存储">
-<meta property="og:url" content="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/index.html">
+<meta property="og:title" content="【数据结构·三】 串">
+<meta property="og:url" content="https://lapplandsp.github.io/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%89%E3%80%91%20%E4%B8%B2/index.html">
 <meta property="og:site_name" content="Lappland">
-<meta property="og:description" content="矩阵的压缩存储  预备内容   内存中二维数组的线性存储方法： 行优先：一行一行存，存完一行存下一行； b[i][j]的存储地址 &#x3D; LOC(起始地址) + (i * N + j) * sizeof(ElemType) 列优先：一列一列存，存完一列存下一列。 b[i][j]的存储地址 &#x3D; LOC(起始地址) + (j * M + i) * sizeof(ElemType)    对称矩阵 n阶方">
+<meta property="og:description" content="串  串的定义 串即字符串，有零个或多个字符组成的有限序列。 S &#x3D; ‘a1a2a3…an’ (n &gt; 0)  S 为串名 边界符为引号或括号 字符序列为串值 n为串的长度 n &#x3D; 0时为空串  串是一种线性表，数据元素之间呈线性关系。 基本操作通常以子串为操作对象。  名词   子串 串中任意个连续字符组成的子序列。   主串 包含字串的串   字符在主串中的位置 字符在串中的序号。（从">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-18T10:46:58.000Z">
-<meta property="article:modified_time" content="2022-06-18T11:37:51.312Z">
+<meta property="article:published_time" content="2022-06-19T05:54:04.000Z">
+<meta property="article:modified_time" content="2022-06-19T05:54:51.713Z">
 <meta property="article:author" content="LapplandSP">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/index.html">
+  <link rel="canonical" href="https://lapplandsp.github.io/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%89%E3%80%91%20%E4%B8%B2/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Lappland" type="application/atom+xml">
   
@@ -305,14 +305,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-【数据结构·B】 矩阵的压缩存储" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-【数据结构·三】 串" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      【数据结构·B】 矩阵的压缩存储
+      【数据结构·三】 串
     </h1>
   
 
@@ -320,8 +320,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" class="article-date">
-	  <time datetime="2022-06-18T10:46:58.000Z" itemprop="datePublished">2022-06-18</time>
+	<a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%89%E3%80%91%20%E4%B8%B2/" class="article-date">
+	  <time datetime="2022-06-19T05:54:04.000Z" itemprop="datePublished">2022-06-19</time>
 	</a>
 </span>
         
@@ -334,67 +334,66 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%89%E3%80%91%20%E4%B8%B2/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="矩阵的压缩存储"><a class="markdownIt-Anchor" href="#矩阵的压缩存储"></a> 矩阵的压缩存储</h1>
-<h2 id="预备内容"><a class="markdownIt-Anchor" href="#预备内容"></a> 预备内容</h2>
+        <h1 id="串"><a class="markdownIt-Anchor" href="#串"></a> 串</h1>
+<h2 id="串的定义"><a class="markdownIt-Anchor" href="#串的定义"></a> 串的定义</h2>
+<p>串即字符串，有零个或多个字符组成的有限序列。</p>
+<p>S = ‘a1a2a3…an’ (n &gt; 0)</p>
+<ul>
+<li>S 为串名</li>
+<li>边界符为引号或括号</li>
+<li>字符序列为串值</li>
+<li>n为串的长度</li>
+<li>n = 0时为空串</li>
+</ul>
+<p>串是一种线性表，数据元素之间呈线性关系。</p>
+<p>基本操作通常以子串为操作对象。</p>
+<h2 id="名词"><a class="markdownIt-Anchor" href="#名词"></a> 名词</h2>
 <ul>
 <li>
-<p>内存中二维数组的线性存储方法：</p>
-<p>行优先：一行一行存，存完一行存下一行；</p>
-<p><code>b[i][j]的存储地址 = LOC(起始地址) + (i * N + j) * sizeof(ElemType)</code></p>
-<p>列优先：一列一列存，存完一列存下一列。</p>
-<p><code>b[i][j]的存储地址 = LOC(起始地址) + (j * M + i) * sizeof(ElemType)</code></p>
-</li>
-</ul>
-<h2 id="对称矩阵"><a class="markdownIt-Anchor" href="#对称矩阵"></a> 对称矩阵</h2>
-<p>n阶方阵中任意一个元素都有<code>a[i][j] = a[j][i]</code>，则该矩阵为对称矩阵。</p>
-<p>普通存储： n*n</p>
-<h3 id="策略"><a class="markdownIt-Anchor" href="#策略"></a> 策略</h3>
-<p>只存储主对角线+下三角区。</p>
-<p>按行优先原则将各元素存入一维数组中</p>
-<ul>
-<li>数组大小为 (1 + n) * n / 2</li>
-<li>可设计映射函数将二维坐标转义为线性位序
-<ul>
-<li>k = i*(i - 1)/2 + j -1		(i &gt; j)</li>
-</ul>
-</li>
-</ul>
-<h2 id="三角矩阵"><a class="markdownIt-Anchor" href="#三角矩阵"></a> 三角矩阵</h2>
-<p>除了主对角线和下三角区，其余的元素都相同。</p>
-<h3 id="策略-2"><a class="markdownIt-Anchor" href="#策略-2"></a> 策略</h3>
-<p>多一个存储单元存储相同的元素，一般放在最后面</p>
-<ul>
-<li>k = i*(i - 1)/2 + j -1		(i &gt; j)</li>
-<li>n * (n - 1) / 2                 (i &lt; j)</li>
-</ul>
-<h2 id="三对角矩阵"><a class="markdownIt-Anchor" href="#三对角矩阵"></a> 三对角矩阵</h2>
-<p>带状矩阵，当|i - j | &gt; 1时<code>a[i][j] = 0</code></p>
-<h3 id="策略-3"><a class="markdownIt-Anchor" href="#策略-3"></a> 策略</h3>
-<ul>
-<li>除了第一行和最后一行外，每行都是三个元素。[0]  -  [3n - 3]</li>
-<li>k = 2i + j - 3</li>
-</ul>
-<h2 id="稀疏矩阵"><a class="markdownIt-Anchor" href="#稀疏矩阵"></a> 稀疏矩阵</h2>
-<p>非零元素远少于矩阵元素个数</p>
-<h3 id="策略-4"><a class="markdownIt-Anchor" href="#策略-4"></a> 策略</h3>
-<ol>
-<li>
-<p>顺序存储 三元组（行、列、值）</p>
-<p>失去随机存储特性</p>
+<p><strong>子串</strong></p>
+<p>串中任意个连续字符组成的子序列。</p>
 </li>
 <li>
-<p>链式存储 十字链表法</p>
-<p>链表中存储矩阵的行、列；</p>
-<p>向右域存储列</p>
-<p>向下域存储行</p>
+<p><strong>主串</strong></p>
+<p>包含字串的串</p>
 </li>
-</ol>
+<li>
+<p><strong>字符在主串中的位置</strong></p>
+<p>字符在串中的序号。（从1开始数）</p>
+</li>
+<li>
+<p><strong>子串在主串中的位置</strong></p>
+<p>第一个字符在主串中的位置。</p>
+</li>
+</ul>
+<h2 id="串的基本操作"><a class="markdownIt-Anchor" href="#串的基本操作"></a> 串的基本操作</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```StrCopy(&amp;T,S)```复制</span><br><span class="line"></span><br><span class="line">```StrEmpty(S)```拷贝</span><br><span class="line"></span><br><span class="line">```StrLength(S)```求串长</span><br><span class="line"></span><br><span class="line">```ClearString(&amp;S)```清空</span><br><span class="line"></span><br><span class="line">```DestroyString(&amp;S)```销毁</span><br><span class="line"></span><br><span class="line">```Concat(&amp;T,S1,S2)```串连接</span><br><span class="line"></span><br><span class="line">```SubString(&amp;Sub, S, pos,len)```求子串：将串 S 从第 pos 个字符开始，长度为 len 的字符串赋值给Sub。</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line">bool SubString(SString &amp;Sub, SString S, int pos, int len)&#123;</span><br><span class="line">    if(pos + len - 1 &gt; S.lenth)</span><br><span class="line">        return false;</span><br><span class="line">    for(int i = pos; i &lt; pos + len; i++)&#123;</span><br><span class="line">        Sub[i - pos + 1] = S.str[i];</span><br><span class="line">        Sub.lenth = len;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><figcaption><span>T)```定位子串</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```c</span><br><span class="line">int Index(SString S, SString T)&#123;</span><br><span class="line">    int i = 1, n = S.lenth, m = T.lenth;</span><br><span class="line">    SString sub;		//暂存字串</span><br><span class="line">    while(i &lt; n - m + 1)&#123;</span><br><span class="line">        SubString(sub,S,i,m);</span><br><span class="line">        if(StrCompare(sub, T) != 0) ++i;</span><br><span class="line">        else return i;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;	//找不到子串</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定位操作的进阶算法：朴素模式匹配算法 -&gt; KMP算法 -&gt; 优化的KMP算法</li>
+</ul>
+<figure class="highlight plaintext"><figcaption><span>T)```比较长度</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```c</span><br><span class="line">int StrCompare(SString S, SString T)&#123;		//由正、负、零来判断大小</span><br><span class="line">    for (int i = 1 ; i &lt;= S.lenth &amp;&amp; i &lt;= T.lenth; i++)&#123;</span><br><span class="line">        if(S.str[i] != T.str[i])</span><br><span class="line">            return S.str[i] - T.str[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return S.lenth - T.lenth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="串的顺序存储"><a class="markdownIt-Anchor" href="#串的顺序存储"></a> 串的顺序存储</h2>
+<p>用数组</p>
+<ul>
+<li>在最后一位存储串的长度</li>
+<li>牺牲第一个空间，保证串的位序与数组下标相同。</li>
+</ul>
+<h2 id="串的链式存储"><a class="markdownIt-Anchor" href="#串的链式存储"></a> 串的链式存储</h2>
+<ul>
+<li>每个结点存储多个字符（最好是四个）</li>
+<li>若每个结点存一个字符，存储密度低（每个结点 = 1字节数据 + 4字节指针）</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span>&#123;</span></span><br><span class="line">    <span class="type">char</span> str[<span class="number">4</span>];</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;StringNode, *String;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可将空闲空间由&quot;\0&quot;填充。</li>
+</ul>
 
       
     </div>
@@ -404,7 +403,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" title="【数据结构·B】 矩阵的压缩存储" target="_blank" rel="external">https://lapplandsp.github.io/LapplandSP/2022/06/18/【数据结构·B】 矩阵的压缩存储/</a>
+      <a href="https://lapplandsp.github.io/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%89%E3%80%91%20%E4%B8%B2/" title="【数据结构·三】 串" target="_blank" rel="external">https://lapplandsp.github.io/LapplandSP/2022/06/19/【数据结构·三】 串/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -450,13 +449,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%89%E3%80%91%20%E4%B8%B2/" title="【数据结构·三】 串"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7A%E3%80%91%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" title="【数据结构·A】栈与队列的应用"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" title="【数据结构·B】 矩阵的压缩存储"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
