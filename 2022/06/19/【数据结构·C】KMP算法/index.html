@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>【数据结构·A】栈与队列的应用 | Lappland</title>
-  <meta name="description" content="栈与队列的应用  1. 括号匹配（栈） 遇到左括号就入栈，遇到右括号就弹出（大、中、小括号应匹配）  只有左括号，没有右括号，报错。 有右括号，但栈空，报错。 弹出的左括号与右括号不匹配，报错。  12345#define MaxSize 20typedef struct&amp;#123;    char data[MaxSize];    int top;&amp;#125; SqStack; 123456">
+  <title>【数据结构·C】 KMP算法 | Lappland</title>
+  <meta name="description" content="KMP算法  模式匹配 在主串中找到与模式串相同的子串，并返回其所在位置。  朴素模式匹配算法 从第一个字符开始，将主串中”从当前字符开始的长度与模式串相同的子串“与 子串 相比较。 123456789101112131415161718int Index(SString S, SString T)&amp;#123;    int k &#x3D; 1;    int i &#x3D; k, j &#x3D; 1;    whil">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【数据结构·A】栈与队列的应用">
-<meta property="og:url" content="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7A%E3%80%91%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
+<meta property="og:title" content="【数据结构·C】 KMP算法">
+<meta property="og:url" content="https://lapplandsp.github.io/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7C%E3%80%91KMP%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Lappland">
-<meta property="og:description" content="栈与队列的应用  1. 括号匹配（栈） 遇到左括号就入栈，遇到右括号就弹出（大、中、小括号应匹配）  只有左括号，没有右括号，报错。 有右括号，但栈空，报错。 弹出的左括号与右括号不匹配，报错。  12345#define MaxSize 20typedef struct&amp;#123;    char data[MaxSize];    int top;&amp;#125; SqStack; 123456">
+<meta property="og:description" content="KMP算法  模式匹配 在主串中找到与模式串相同的子串，并返回其所在位置。  朴素模式匹配算法 从第一个字符开始，将主串中”从当前字符开始的长度与模式串相同的子串“与 子串 相比较。 123456789101112131415161718int Index(SString S, SString T)&amp;#123;    int k &#x3D; 1;    int i &#x3D; k, j &#x3D; 1;    whil">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-18T09:46:31.000Z">
-<meta property="article:modified_time" content="2022-06-18T11:37:43.812Z">
+<meta property="article:published_time" content="2022-06-19T07:02:42.000Z">
+<meta property="article:modified_time" content="2022-06-19T07:04:02.112Z">
 <meta property="article:author" content="LapplandSP">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7A%E3%80%91%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
+  <link rel="canonical" href="https://lapplandsp.github.io/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7C%E3%80%91KMP%E7%AE%97%E6%B3%95/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Lappland" type="application/atom+xml">
   
@@ -305,14 +305,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-【数据结构·A】栈与队列的应用" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-【数据结构·C】KMP算法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      【数据结构·A】栈与队列的应用
+      【数据结构·C】 KMP算法
     </h1>
   
 
@@ -320,8 +320,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7A%E3%80%91%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
-	  <time datetime="2022-06-18T09:46:31.000Z" itemprop="datePublished">2022-06-18</time>
+	<a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7C%E3%80%91KMP%E7%AE%97%E6%B3%95/" class="article-date">
+	  <time datetime="2022-06-19T07:02:42.000Z" itemprop="datePublished">2022-06-19</time>
 	</a>
 </span>
         
@@ -334,128 +334,101 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7A%E3%80%91%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7C%E3%80%91KMP%E7%AE%97%E6%B3%95/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="栈与队列的应用"><a class="markdownIt-Anchor" href="#栈与队列的应用"></a> 栈与队列的应用</h1>
-<h2 id="1-括号匹配栈"><a class="markdownIt-Anchor" href="#1-括号匹配栈"></a> 1. 括号匹配（栈）</h2>
-<p>遇到左括号就入栈，遇到右括号就弹出（大、中、小括号应匹配）</p>
+        <h1 id="kmp算法"><a class="markdownIt-Anchor" href="#kmp算法"></a> KMP算法</h1>
+<h2 id="模式匹配"><a class="markdownIt-Anchor" href="#模式匹配"></a> 模式匹配</h2>
+<p>在主串中找到与模式串相同的子串，并返回其所在位置。</p>
+<h2 id="朴素模式匹配算法"><a class="markdownIt-Anchor" href="#朴素模式匹配算法"></a> 朴素模式匹配算法</h2>
+<p>从第一个字符开始，将主串中”从当前字符开始的长度与模式串相同的子串“与 子串 相比较。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index</span><span class="params">(SString S, SString T)</span>&#123;</span><br><span class="line">    <span class="type">int</span> k = <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> i = k, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= S.lenth &amp;&amp; j &lt;= T.lenth)&#123;</span><br><span class="line">        <span class="keyword">if</span>(S.str[i] == T.str[j])&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            k++;</span><br><span class="line">            i = k;</span><br><span class="line">            j = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j &gt; T.lenth) </span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="特性"><a class="markdownIt-Anchor" href="#特性"></a> 特性</h4>
 <ul>
-<li>只有左括号，没有右括号，报错。</li>
-<li>有右括号，但栈空，报错。</li>
-<li>弹出的左括号与右括号不匹配，报错。</li>
+<li>匹配成功的最好时间复杂度：O( m )</li>
+<li>匹配失败的最好时间复杂度：O( n - m + 1 ) = O( n - m ) =O( n )</li>
+<li>最坏时间复杂度：O( mn )</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 20</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="type">char</span> data[MaxSize];</span><br><span class="line">    <span class="type">int</span> top;</span><br><span class="line">&#125; SqStack;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">BracketCheck</span><span class="params">(<span class="type">char</span> str[], <span class="type">int</span> lenth)</span>&#123;</span><br><span class="line">    SqStack S;</span><br><span class="line">    InitStack(S);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lenth; i++ )&#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i] == <span class="string">&quot;(&quot;</span> || str[i] == <span class="string">&quot;[&quot;</span> || str[i] == <span class="string">&quot;&#123;&quot;</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(StackEmpty(S))</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="type">char</span> topChar;</span><br><span class="line">            pop(S, topChar);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">&quot;(&quot;</span> &amp;&amp; topChar != <span class="string">&quot;)&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">&quot;[&quot;</span> &amp;&amp; topChar != <span class="string">&quot;]&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">&quot;&#123;&quot;</span> &amp;&amp; topChar != <span class="string">&quot;&#125;&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> StackEmpty(S);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="kmp算法-2"><a class="markdownIt-Anchor" href="#kmp算法-2"></a> KMP算法</h2>
+<ul>
+<li>主串扫描指针不回溯</li>
+<li>匹配失败时模式串扫描指针回溯</li>
+</ul>
+<h4 id="指针回溯策略"><a class="markdownIt-Anchor" href="#指针回溯策略"></a> 指针回溯策略：</h4>
+<p>定义与模式串相同长度的 next 数组</p>
+<p>当第一个字符就不匹配时，应让 j 指向0，下一次循环时，i j都自增，此时j指向子串的第一个字符，而 i 后移一位以继续进行匹配。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index_KMP</span><span class="params">(SString S, SString T)</span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(i &lt;= S.lenth &amp;&amp; j &lt;= T.lenth)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span> || S.str[i] == T.str[i])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;				<span class="comment">//继续比较后继字符</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            j = next[j];		<span class="comment">//相当于模式串右移</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(j &gt; T.lenth)</span><br><span class="line">        <span class="keyword">return</span> i - T.lenth;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="求-next-数组"><a class="markdownIt-Anchor" href="#求-next-数组"></a> 求 next 数组</h4>
 <ul>
 <li>
-<p>可以直接使用基本操作，但要注释说明接口</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化栈</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">InitStack</span><span class="params">(SqStack &amp;S)</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//判断空栈</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">StackEmpty</span><span class="params">(SqStack S)</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//压栈</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">Push</span><span class="params">(SqStack &amp;S, <span class="type">char</span> x)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//出栈</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">Pop</span><span class="params">(SqStack &amp;S, <span class="type">char</span> &amp;x)</span></span><br></pre></td></tr></table></figure>
+<p>next[1] = 0;</p>
+</li>
+<li>
+<p>当第 j 个字符匹配失败，由前 1 到 j - 1 个字符组成的串记为 S，则</p>
+<p>next[j] = S相等的前后缀长度 + 1</p>
+</li>
+<li>
+<p>平均时间复杂度O( n + m )</p>
+</li>
+<li>
+<p>考试中一般为手算 next 数组</p>
 </li>
 </ul>
-<h2 id="2-表达式求值栈"><a class="markdownIt-Anchor" href="#2-表达式求值栈"></a> 2. 表达式求值（栈）</h2>
+<h2 id="优化的kmp算法"><a class="markdownIt-Anchor" href="#优化的kmp算法"></a> 优化的KMP算法</h2>
+<p>经典KMP算法中，主串中的 i 与 j 不匹配时，j 会指向 next[j] 以将子串右移。</p>
+<p>经典的 next 数组算法，仅考虑前后字符串匹配问题。</p>
+<p>当 j 与 next[j] 相同时，会多出无意义的对比，应对 next 数组进行优化。</p>
+<h4 id="求-nextval-数组"><a class="markdownIt-Anchor" href="#求-nextval-数组"></a> 求 nextval 数组</h4>
 <ul>
 <li>
-<p>中缀表达式</p>
-</li>
-<li>
-<p>前缀表达式  （波兰表达式）</p>
-</li>
-<li>
-<p><strong>后缀表达式</strong>  （逆波兰表达式）</p>
-</li>
-</ul>
-<h3 id="名词"><a class="markdownIt-Anchor" href="#名词"></a> 名词</h3>
-<ul>
-<li>操作数：数字 / 变量</li>
-<li>界限符：括号</li>
-<li>运算符：加减乘除</li>
-</ul>
-<h3 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h3>
+<p>当 j == next[j] 时，可将 j 指向 next[j] 的 next.</p>
 <table>
 <thead>
 <tr>
-<th>中缀表达式</th>
-<th>后缀表达式</th>
-<th>前缀表达式</th>
+<th>序号j</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th><strong>4</strong></th>
+<th>5</th>
+<th>6</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>a + b</td>
-<td>a b +</td>
-<td>+ a b</td>
+<td>模式串</td>
+<td><strong>G</strong></td>
+<td>O</td>
+<td>O</td>
+<td><strong>G</strong></td>
+<td>L</td>
+<td>E</td>
 </tr>
 <tr>
-<td>a + b - c</td>
-<td>a b + c -</td>
-<td>- + a b c</td>
+<td>next[j]</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>2</td>
+<td>1</td>
 </tr>
 <tr>
-<td>a + b - c * d</td>
-<td>a b + c d * -</td>
-<td>- + a b * c d</td>
+<td>nextval[j]</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>2</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
-<h3 id="原则"><a class="markdownIt-Anchor" href="#原则"></a> 原则</h3>
-<p>左优先原则：只要有靠近左边的运算符可以运算， 就优先生效左边的运算符。</p>
-<p><em>可保证运算顺序唯一</em>。</p>
-<h3 id="中缀表达式转后缀表达式"><a class="markdownIt-Anchor" href="#中缀表达式转后缀表达式"></a> 中缀表达式转后缀表达式</h3>
-<p>初始化栈，保存<strong>暂时不能确定运算顺序的运算符</strong>。</p>
-<ul>
-<li>
-<p>遇到<strong>操作数</strong>，直接加入后缀表达式。</p>
-</li>
-<li>
-<p>遇到<strong>界限符</strong>，遇到左括号 “(” 直接入栈，遇到右括号 “)” 依次弹出栈内运算符并加入后缀表达式，直到弹出左括号 “(” 为止，左括号不入栈。</p>
-</li>
-<li>
-<p>遇到<strong>运算符</strong>，依次弹出栈中优先级高于或等于该运算符的所有运算符，加入后缀表达式，直到栈空或遇到左括号为止，再将此运算符入栈。</p>
-</li>
-<li>
-<p>以上述方法处理完所有字符后，将剩余运算符依次弹出，加入后缀表达式。</p>
 </li>
 </ul>
-<h3 id="后缀表达式计算"><a class="markdownIt-Anchor" href="#后缀表达式计算"></a> 后缀表达式计算</h3>
-<ul>
-<li>从左往右扫描下一个元素，直到处理完所有元素。</li>
-<li>扫描到<strong>操作数</strong>则入栈。</li>
-<li>扫描到<strong>运算符</strong>则弹出位于栈顶的两个操作数，运算结果压回栈顶。</li>
-</ul>
-<h3 id="中缀表达式计算"><a class="markdownIt-Anchor" href="#中缀表达式计算"></a> 中缀表达式计算</h3>
-<p>初始化两个栈，一个存操作数，一个存运算符。</p>
-<ul>
-<li>扫描到<strong>操作数</strong>，压入栈。</li>
-<li>扫描到<strong>运算符</strong>，依次弹出栈中优先级高于或等于该运算符的所有运算符，加入后缀表达式，直到栈空或遇到左括号为止，再将此运算符入栈。每弹出一个运算符都需要弹出两个操作数执行计算，并将结果压回栈中。</li>
-</ul>
-<h2 id="3-递归栈"><a class="markdownIt-Anchor" href="#3-递归栈"></a> 3. 递归（栈）</h2>
-<ul>
-<li>递归算法效率很低。</li>
-<li>在递归调用的过程中，系统为每一层的返回点、局部变量、传入实参等等都开辟了递归工作栈来进行数据存储。</li>
-<li>递归次数多容易造成栈溢出。</li>
-<li>递归算法可能包含多次重复运算。</li>
-<li>可以将递归算法转换为非递归算法，通常需要借助栈来实现。</li>
-</ul>
-<h2 id="4-树的层次遍历队列"><a class="markdownIt-Anchor" href="#4-树的层次遍历队列"></a> 4. 树的层次遍历（队列）</h2>
-<ul>
-<li>将根结点入队。</li>
-<li>处理队头元素，若有子节点则全部入队，最后该结点出队。</li>
-<li>以此可以完成树的层次遍历。</li>
-</ul>
-<h2 id="5-图的广度优先遍历队列"><a class="markdownIt-Anchor" href="#5-图的广度优先遍历队列"></a> 5. 图的广度优先遍历（队列）</h2>
-<ul>
-<li>创建队列</li>
-<li>从第一个结点开始遍历，将与其相邻的所有未遍历过的结点全部入队。</li>
-<li>处理队头元素，将与其相邻的所有未遍历过的结点全部入队。</li>
-<li>以此完成图的广度优先遍历。</li>
-</ul>
-<h2 id="6-操作系统"><a class="markdownIt-Anchor" href="#6-操作系统"></a> 6. 操作系统</h2>
-<p>先来先服务</p>
-<p>First come first service (<strong>FCFS</strong>)</p>
 
       
     </div>
@@ -465,7 +438,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lapplandsp.github.io/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7A%E3%80%91%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" title="【数据结构·A】栈与队列的应用" target="_blank" rel="external">https://lapplandsp.github.io/LapplandSP/2022/06/18/【数据结构·A】栈与队列的应用/</a>
+      <a href="https://lapplandsp.github.io/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7C%E3%80%91KMP%E7%AE%97%E6%B3%95/" title="【数据结构·C】 KMP算法" target="_blank" rel="external">https://lapplandsp.github.io/LapplandSP/2022/06/19/【数据结构·C】KMP算法/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -511,13 +484,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" title="【数据结构·B】 矩阵的压缩存储"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%BA%8C%E3%80%91%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/" title="【数据结构·二】栈、队列和数组"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%89%E3%80%91%20%E4%B8%B2/" title="【数据结构·三】 串"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
