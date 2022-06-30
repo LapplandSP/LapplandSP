@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>【数据结构·四】 树与二叉树 | Lappland</title>
+  <meta name="description" content="第五章 树与二叉树  树 树是n (n &gt; 0) 个结点的有限集合， n &#x3D; 0 时，称为空树。 任意一个非空树应满足：  有且仅有一个特定的称为根的结点。 当 n &gt; 1 时，其余结点可分为m ( m &gt; 0 ) 个互不相交的有限集合，其中每个集合本身又是一棵树，称为根节点的子树。   基本概念  根结点：有且只有一个 边：“树干” 分支结点：有下一级分支的结点 叶子节点：没">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【数据结构·四】 树与二叉树">
+<meta property="og:url" content="https://lapplandsp.github.io/LapplandSP/2022/06/30/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E5%9B%9B%E3%80%91%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:site_name" content="Lappland">
+<meta property="og:description" content="第五章 树与二叉树  树 树是n (n &gt; 0) 个结点的有限集合， n &#x3D; 0 时，称为空树。 任意一个非空树应满足：  有且仅有一个特定的称为根的结点。 当 n &gt; 1 时，其余结点可分为m ( m &gt; 0 ) 个互不相交的有限集合，其中每个集合本身又是一棵树，称为根节点的子树。   基本概念  根结点：有且只有一个 边：“树干” 分支结点：有下一级分支的结点 叶子节点：没">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-lappland.oss-cn-hangzhou.aliyuncs.com/img/image-20220619155358610.png">
+<meta property="article:published_time" content="2022-06-30T03:42:55.000Z">
+<meta property="article:modified_time" content="2022-06-30T03:43:41.196Z">
+<meta property="article:author" content="LapplandSP">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-lappland.oss-cn-hangzhou.aliyuncs.com/img/image-20220619155358610.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://lapplandsp.github.io/LapplandSP/2022/06/30/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E5%9B%9B%E3%80%91%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Lappland" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/LapplandSP/css/style.css">
+
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center theme-green" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/LapplandSP" target="_blank">
+          <img class="img-circle img-rotate" src="/LapplandSP/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">LapplandSP</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Student of TYUT</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Siracusa, Terra</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/LapplandSP/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/LapplandSP/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/LapplandSP/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/LapplandSP/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/LapplandSP/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/LapplandSP" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>没有公告！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/LapplandSP/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/LapplandSP/tags/Markdown/" style="font-size: 13px;">Markdown</a> <a href="/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px;">数据结构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/LapplandSP/archives/2022/06/">六月 2022</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/LapplandSP/2022/06/30/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E5%9B%9B%E3%80%91%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" class="title">【数据结构·四】 树与二叉树</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-30T03:42:55.000Z" itemprop="datePublished">2022-06-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7C%E3%80%91KMP%E7%AE%97%E6%B3%95/" class="title">【数据结构·C】 KMP算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-19T07:02:42.000Z" itemprop="datePublished">2022-06-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E4%B8%89%E3%80%91%20%E4%B8%B2/" class="title">【数据结构·三】 串</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-19T05:54:04.000Z" itemprop="datePublished">2022-06-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7B%E3%80%91%20%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" class="title">【数据结构·B】 矩阵的压缩存储</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-18T10:46:58.000Z" itemprop="datePublished">2022-06-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/LapplandSP/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7A%E3%80%91%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" class="title">【数据结构·A】栈与队列的应用</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-18T09:46:31.000Z" itemprop="datePublished">2022-06-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-【数据结构·四】树与二叉树" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【数据结构·四】 树与二叉树
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/LapplandSP/2022/06/30/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E5%9B%9B%E3%80%91%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" class="article-date">
+	  <time datetime="2022-06-30T03:42:55.000Z" itemprop="datePublished">2022-06-30</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/LapplandSP/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/LapplandSP/2022/06/30/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E5%9B%9B%E3%80%91%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="第五章-树与二叉树"><a class="markdownIt-Anchor" href="#第五章-树与二叉树"></a> 第五章 树与二叉树</h1>
+<h2 id="树"><a class="markdownIt-Anchor" href="#树"></a> 树</h2>
+<p>树是n (n &gt; 0) 个结点的有限集合， n = 0 时，称为空树。</p>
+<p>任意一个非空树应满足：</p>
+<ol>
+<li>有且仅有一个特定的称为根的结点。</li>
+<li>当 n &gt; 1 时，其余结点可分为m ( m &gt; 0 ) 个<strong>互不相交</strong>的有限集合，其中每个集合本身又是一棵树，称为根节点的<strong>子树</strong>。</li>
+</ol>
+<h3 id="基本概念"><a class="markdownIt-Anchor" href="#基本概念"></a> 基本概念</h3>
+<ul>
+<li>根结点：有且只有一个</li>
+<li>边：“树干”</li>
+<li>分支结点：有下一级分支的结点</li>
+<li>叶子节点：没有下一级分支的结点</li>
+<li>空树：结点数为 0</li>
+<li>非空树</li>
+<li>只有根节点没有前驱</li>
+<li>只有叶子结点没有后继</li>
+<li>除了根结点外，其余结点都有一个前驱，且只有一个前驱。</li>
+</ul>
+<h3 id="结点之间的关系"><a class="markdownIt-Anchor" href="#结点之间的关系"></a> 结点之间的关系</h3>
+<ul>
+<li>
+<p>祖先结点、子孙结点、父结点、子结点、兄弟结点、堂兄弟结点</p>
+</li>
+<li>
+<p>路径：只能从上往下，边是有向的。</p>
+</li>
+<li>
+<p>路径长度：经过几条边</p>
+</li>
+</ul>
+<h3 id="属性"><a class="markdownIt-Anchor" href="#属性"></a> 属性</h3>
+<ul>
+<li>层次（深度）：从上往下数（默认从1开始）</li>
+<li>高度：从下往上数</li>
+<li>树的高度/深度： 总共多少层</li>
+<li>结点的度：有几个子分支</li>
+<li>树的度：各节点中度的最大值</li>
+<li>有序树：结点的各字树是有次序的</li>
+<li>无序树</li>
+<li>森林：m棵树互不相交组成的集合（允许空森林），可以与树相互转换</li>
+</ul>
+<h2 id="性质"><a class="markdownIt-Anchor" href="#性质"></a> 性质</h2>
+<ol>
+<li>
+<p>结点数 = 总度数 + 1</p>
+</li>
+<li>
+<p>度为 m 的树和 m 叉树的区别</p>
+<table>
+<thead>
+<tr>
+<th>度为m的树</th>
+<th>m叉树</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任意结点的度 &lt;= m （每个结点最多三个子结点）</td>
+<td>任意结点的度 &lt;= m （每个结点最多三个子结点）</td>
+</tr>
+<tr>
+<td>至少有一个结点度 = m</td>
+<td>允许所有结点的度都 &lt; m</td>
+</tr>
+<tr>
+<td>一定是非空树，至少有 m + 1 个结点</td>
+<td>可以是空树</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>度为 m 的树的第 i 层 最多有 m^i-1 个结点（ i &gt;= 1）</p>
+<p>第一层为根结点，为 m^0 ，以此类推</p>
+</li>
+<li>
+<p>高度为 h 的 m 叉树至多有 ( m ^ h - 1 ) / ( m - 1 ) 个结点</p>
+<p>等比数列 ( a + aq + aq^2 + aq^3 + ··· + aq^(n-1) ) 求和</p>
+</li>
+<li>
+<p><strong>高度为 h 的 m 叉树至少有 h 个结点。</strong></p>
+<p><strong>高度为 h ，度为 m 的树至少有 h + m - 1 个结点。</strong></p>
+</li>
+<li>
+<p>具有 n 个结点的 m 叉树的最小高度为[ log<sub>m</sub>( n ( m - 1 ) + 1) ]</p>
+<p><img src="https://blog-lappland.oss-cn-hangzhou.aliyuncs.com/img/image-20220619155358610.png" alt="image-20220619155358610" /></p>
+</li>
+</ol>
+<h2 id="二叉树"><a class="markdownIt-Anchor" href="#二叉树"></a> 二叉树</h2>
+<h3 id="二叉树定义"><a class="markdownIt-Anchor" href="#二叉树定义"></a> 二叉树定义</h3>
+<ul>
+<li>
+<p>n ( n &gt;= 0) 个结点组成的有限集合，n = 0 时为空二叉树。</p>
+</li>
+<li>
+<p>或者由一个根结点和左右两个子树组成，左右两个子树又分别是二叉树。</p>
+</li>
+</ul>
+<h3 id="特殊二叉树"><a class="markdownIt-Anchor" href="#特殊二叉树"></a> 特殊二叉树</h3>
+<ul>
+<li>
+<p>满二叉树</p>
+<p>除叶子结点外，其余跟/分支结点都长满了两个分支。</p>
+<p>有2<sup>h</sup>-1个结点</p>
+<p>不存在度为1的结点</p>
+<p>按层序编号，第i个结点的左子结点为2i，右子节点为2i - 1.</p>
+<p>结点i的父结点为 \lfloor i/2 \rfloor</p>
+</li>
+<li>
+<p>完全二叉树</p>
+<p>当且仅当二叉树中结点与高度为h的满二叉树顺序编号后的1 ~ n个结点一一对应时，称为完全二叉树。</p>
+<p>只可能在最后两层出现叶子结点</p>
+<p>最多只有一个度为1的结点</p>
+<p>父结点子结点方法与满二叉树相同</p>
+<p>i &lt;= \lfloor n/2 \rfloor 时为分支结点，i &gt; \lfloor n/2 \rfloor 时为叶子结点</p>
+<p>子结点一定是左子结点</p>
+</li>
+<li>
+<p>二叉排序树</p>
+<p>左子树所有关键字都小于根结点</p>
+<p>右子树所有关键字都大于根结点</p>
+<p>左右子树各是一颗二叉排序树</p>
+<p>方便插入、查找</p>
+</li>
+<li>
+<p>平衡二叉树</p>
+<p>左子树和右子树深度差不超过1</p>
+<p>希望树往宽处长</p>
+</li>
+</ul>
+<h3 id="二叉树的性质"><a class="markdownIt-Anchor" href="#二叉树的性质"></a> 二叉树的性质</h3>
+<h4 id="二叉树-2"><a class="markdownIt-Anchor" href="#二叉树-2"></a> 二叉树</h4>
+<ol>
+<li>
+<p>设非空二叉树中度为0、1、2的结点个数分别为n<sub>0</sub> , n<sub>1</sub> , n<sub>2</sub> ，则n<sub>0</sub> = n<sub>2</sub> + 1（叶子结点比二分支结点多一个）</p>
+<p>节点总数为n，则：</p>
+<ul>
+<li>n = n<sub>0</sub> + n<sub>1</sub> + n<sub>2</sub> （总和）</li>
+<li>n = n<sub>1</sub> + 2n<sub>2</sub> + 1 （一个子结点的子结点 + 两个子结点的子结点 + 根）</li>
+</ul>
+</li>
+<li>
+<p>二叉树的第 i 层最多有 2<sup>i-1</sup> 个结点 （i &gt;= 1）</p>
+<p>m 叉树的第 i 层至多有 m<sup>i-1</sup> 个结点 （i &gt;= 1）</p>
+</li>
+</ol>
+<h4 id="满二叉树"><a class="markdownIt-Anchor" href="#满二叉树"></a> 满二叉树</h4>
+<ol>
+<li>
+<p>具有n个结点的完全二叉树的高度h为 \lceil log<sub>2</sub>( n + 1 ) \rceil 或 \lfloor log<sub>2</sub>n \rfloor + 1</p>
+<p>（高为h的满二叉树结点数反过来算）</p>
+</li>
+<li>
+<p>对于一个完全二叉树，可由结点数 n 推出度为0、1和2的结点个数n<sub>0</sub> , n<sub>1</sub> , n<sub>2</sub></p>
+<ul>
+<li>完全二叉树最多只有一个度为 1 的结点。</li>
+<li>n<sub>0</sub> = n<sub>2</sub> + 1 ，n<sub>0</sub> 一定是偶数，所以 n<sub>0</sub> + n<sub>2</sub> 一定是奇数</li>
+<li>若是2k个结点：
+<ul>
+<li>n<sub>0</sub> = k, n<sub>2</sub> = k - 1, n<sub>1</sub> = 1</li>
+</ul>
+</li>
+<li>若是 2k - 1 个结点：
+<ul>
+<li>n<sub>0</sub> = k, n<sub>2</sub> = k - 1, n<sub>1</sub> = 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="二叉树的存储结构"><a class="markdownIt-Anchor" href="#二叉树的存储结构"></a> 二叉树的存储结构</h3>
+<h4 id="顺序存储"><a class="markdownIt-Anchor" href="#顺序存储"></a> 顺序存储</h4>
+<p>直接存在数组里，从上至下，从左至右，结点只定义数据类型和是否为空。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 100</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">bool</span> isEmpty;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">TreeNode t[MaxSize];	<span class="comment">//从上至下，从左至右;最好空出t[0];</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;= MaxSize; i++)</span><br><span class="line">&#123;</span><br><span class="line">    t[i].isEmpty = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>i 的左子结点 2i；右子结点 2i + 1</li>
+<li>i 的父结点 i/2 向下取整</li>
+<li>i所在层次 log<sub>2</sub>( n + 1 ) 向上取整</li>
+<li>判断 i 是否有左子结点： 2i 和 n 比，右子结点为 2i + 1和n比</li>
+<li>判断它自己是不是子结点：i 和 n/2 比</li>
+<li>普通二叉树编号与完全二叉树一一对应起来即可用顺序存储表示
+<ul>
+<li>浪费空间</li>
+<li>所有顺序存储只适合存储完全二叉树</li>
+</ul>
+</li>
+</ul>
+<h4 id="链式存储"><a class="markdownIt-Anchor" href="#链式存储"></a> 链式存储</h4>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ElemType</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BitNode</span>&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BitNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125;BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">BiTree root = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入根结点</span></span><br><span class="line">root = (BiTree) <span class="built_in">malloc</span> (<span class="keyword">sizeof</span>(BiTNode));</span><br><span class="line">root-&gt;data = &#123;<span class="number">1</span>&#125;;</span><br><span class="line">root-&gt;lchild = <span class="literal">NULL</span>;</span><br><span class="line">root-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入新结点</span></span><br><span class="line">BiTNode * p = (BiTNode *) <span class="built_in">malloc</span> (<span class="keyword">sizeof</span>(BiTNode));</span><br><span class="line">p-&gt;data = &#123;<span class="number">2</span>&#125;;</span><br><span class="line">p-&gt;lchild = <span class="literal">NULL</span>;</span><br><span class="line">p-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line">root-&gt;lchild = p;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>三叉链表 —— 多加一个指向父结点的指针</li>
+</ul>
+<h4 id="遍历"><a class="markdownIt-Anchor" href="#遍历"></a> 遍历</h4>
+<ul>
+<li>先序：根左右  NLR</li>
+<li>中序：左根右  LNR</li>
+<li>后序：左右根  LRN</li>
+</ul>
+<p>递归遍历：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">PreOrder</span><span class="params">(BiTree T)</span>&#123;		<span class="comment">//先序遍历</span></span><br><span class="line">    <span class="keyword">if</span>(T!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        visit(T);</span><br><span class="line">        PreOrder(T-&gt;lchild);</span><br><span class="line">        PreOrder(T-&gt;rchild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>中、后序，仅visit位置不同</p>
+<p>空间复杂度 O(h)</p>
+<ul>
+<li>
+<p>层序遍历</p>
+<ol>
+<li>初始化辅助队列</li>
+<li>根入队</li>
+<li>若队列非空，则队头出队，访问该结点，并将其左右子结点按顺序入队</li>
+<li>重复，直至队列为空</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">LevelOrder</span><span class="params">(BiTree T)</span>&#123;</span><br><span class="line">    LinkQueue Q;</span><br><span class="line">    InitQueue(Q);</span><br><span class="line">    BiTree p;</span><br><span class="line">    EnQueue(Q,T);</span><br><span class="line">    <span class="keyword">while</span>(!isEmpty(Q))&#123;</span><br><span class="line">        DeQueue(Q, p);</span><br><span class="line">        visit(p);</span><br><span class="line">        <span class="keyword">if</span>(p_&gt;lchild!=<span class="literal">NULL</span>)</span><br><span class="line">            EnQueue(Q,p-&gt;lchild);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;rchild!=<span class="literal">NULL</span>)</span><br><span class="line">            EnQueue(Q,p-&gt;rchild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="由遍历序列构造二叉树"><a class="markdownIt-Anchor" href="#由遍历序列构造二叉树"></a> 由遍历序列构造二叉树</h4>
+<ul>
+<li>只给一种无法确定</li>
+<li>要确定，需要前/后/层 + 中</li>
+</ul>
+<h3 id="线索二叉树"><a class="markdownIt-Anchor" href="#线索二叉树"></a> 线索二叉树</h3>
+<ul>
+<li>中序线索二叉树：叶子节点左指针指向中序遍历的前驱，右指针则指向后继 ，最后一个结点右指针及第一个结点左指针指向NULL
+<ul>
+<li>中序前驱</li>
+<li>中序后继</li>
+</ul>
+</li>
+<li>存两个tag用来表示指针是否是线索</li>
+<li>先序
+<ul>
+<li>先序前驱</li>
+<li>先序后继</li>
+</ul>
+</li>
+<li>后序
+<ul>
+<li>后序前驱</li>
+<li>后序后继</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InThread</span><span class="params">(ThreadTree T)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        InThread(T-&gt;lchild);</span><br><span class="line">        visit(T);</span><br><span class="line">        InThread(T-&gt;rchild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(ThreadNode *q)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(q-&gt;lchild==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        q-&gt;lchild = pre;</span><br><span class="line">        q-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pre!=<span class="literal">NULL</span> &amp;&amp; pre-&gt;child ==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        pre-&gt;rchild = q;</span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pre = q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="找中序二叉树的前驱后继"><a class="markdownIt-Anchor" href="#找中序二叉树的前驱后继"></a> 找中序二叉树的前驱后继</h4>
+<h5 id="中序线索二叉树找中序后继"><a class="markdownIt-Anchor" href="#中序线索二叉树找中序后继"></a> 中序线索二叉树找中序后继</h5>
+<p>tag = 1 为已线索化</p>
+<ul>
+<li>若 p-&gt;rtag == 1, 则 next = p -&gt; rchild</li>
+<li>若 p-&gt;rtag == 0, 则 next = p 右子树中最左下的结点</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ThreadNode *<span class="title function_">FirstNode</span><span class="params">(ThreadNode *p)</span>&#123;	<span class="comment">//一直往左找</span></span><br><span class="line">    <span class="keyword">while</span>(p-&gt;ltag == <span class="number">0</span>)&#123;</span><br><span class="line">        p = p -&gt; lchild;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ThreadNode *<span class="title function_">NextNode</span><span class="params">(ThreadNode *p)</span>&#123;	<span class="comment">//判断右指针是否指向子树</span></span><br><span class="line">    <span class="keyword">if</span>(p -&gt; rtag == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> FirstNode(p-&gt;rchild);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> p -&gt; rchild;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//非递归遍历 O(1)</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">InOrder</span><span class="params">(ThreadNode *T)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(ThreadNode *p = FirstNode(T);p!=<span class="literal">NULL</span>;p = p-&gt;NextNode(p))</span><br><span class="line">        visit(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="找中序前驱"><a class="markdownIt-Anchor" href="#找中序前驱"></a> 找中序前驱</h5>
+<ul>
+<li>若 p-&gt;rtag == 1, 则 pre = p -&gt; lchild</li>
+<li>若 p-&gt;rtag == 0, 则 pre = p 左子树中最右下的结点</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ThreadNode <span class="title function_">LastNode</span><span class="params">(ThreadNode *p)</span><span class="comment">//找二叉树最右下角结点</span></span><br><span class="line"></span><br><span class="line">ThreadNode *<span class="title function_">PreNode</span><span class="params">(ThreadNode *p)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p -&gt; ltag == <span class="number">0</span>)&#123;	<span class="comment">//如果是树就找最右下角</span></span><br><span class="line">        <span class="keyword">return</span> LastNode(p-&gt;lchild);</span><br><span class="line">    &#125;					<span class="comment">//如果不是树就是线索，直接返回</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> p -&gt; rchild;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="先序线索二叉树找先序后继"><a class="markdownIt-Anchor" href="#先序线索二叉树找先序后继"></a> 先序线索二叉树找先序后继</h5>
+<ul>
+<li>右指针指向树，则后继为该树的根结点</li>
+<li>右指针直接指向后继</li>
+</ul>
+<h5 id="找先序前驱"><a class="markdownIt-Anchor" href="#找先序前驱"></a> 找先序前驱</h5>
+<ul>
+<li>左指针直接指向前驱</li>
+<li>指的不是前驱，没法找，只能遍历</li>
+<li>除非是三叉链表
+<ol>
+<li>结点为左子树，父结点就是前驱</li>
+<li>结点为右子树且左兄弟为空，父结点就是前驱</li>
+<li>结点为右子树且做兄弟非空，前驱为其左兄弟向最右下走，没路了往左走，只要有右子树就往右走，走到没路为止。</li>
+</ol>
+</li>
+<li>p是根结点：没有先序前驱</li>
+</ul>
+<h5 id="后序线索二叉树找后序前驱"><a class="markdownIt-Anchor" href="#后序线索二叉树找后序前驱"></a> 后序线索二叉树找后序前驱</h5>
+<ul>
+<li>右指针指向右子树，右指针指向结点即为前驱</li>
+<li>左指针是线索，直接指向前驱</li>
+<li>右指针是线索或为空，左子树的根为前驱</li>
+</ul>
+<h5 id="找后续后继"><a class="markdownIt-Anchor" href="#找后续后继"></a> 找后续后继</h5>
+<ul>
+<li>无三叉链表只能遍历</li>
+<li>结点为右子树，后继为父结点</li>
+<li>结点为左子树且右兄弟为空，后继为父结点</li>
+<li>结点为左子树且右子树非空，后继为右子树第一个被访问结点</li>
+<li>结点为根结点，无后继</li>
+</ul>
+<h2 id="树的逻辑结构"><a class="markdownIt-Anchor" href="#树的逻辑结构"></a> 树的逻辑结构</h2>
+<h3 id="父结点表示法顺序存储"><a class="markdownIt-Anchor" href="#父结点表示法顺序存储"></a> 父结点表示法（顺序存储）</h3>
+<p>每个结点中保存指向双亲的“指针”</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_TREE_SIZE 100</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> parent;</span><br><span class="line">&#125;PTNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    PTNode nodes[MAX_TREE_SIZE];</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">&#125;PTree;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>增加：直接在数组中增加</p>
+</li>
+<li>
+<p>删除：</p>
+<ol>
+<li>
+<p>若是叶子节点：直接把下面的移上去覆盖掉（更好）</p>
+<p>或者把要删除的结点父指针指向 -1</p>
+</li>
+<li>
+<p>结点数n–；</p>
+</li>
+<li>
+<p>若不是叶子节点，需遍历判断。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="子结点表示法顺序-链式存储"><a class="markdownIt-Anchor" href="#子结点表示法顺序-链式存储"></a> 子结点表示法（顺序 + 链式存储）</h3>
+<p>顺序存储各个节点，每个结点保存子结点链表头指针。链表里存的是子结点在数组中的位序。</p>
+<h3 id="子结点-兄弟结点表示法链式存储"><a class="markdownIt-Anchor" href="#子结点-兄弟结点表示法链式存储"></a> 子结点 + 兄弟结点表示法（链式存储）</h3>
+<p>结点为二叉结点，左指针指向第一个子结点；右指针指向右侧兄弟节点。</p>
+<p><em>可将树转化为二叉树</em></p>
+<ul>
+<li>可用二叉树操作来处理树</li>
+</ul>
+<h3 id="森林和树的转化"><a class="markdownIt-Anchor" href="#森林和树的转化"></a> 森林和树的转化</h3>
+<p>从根节点出发，包括子树在内所有右路节点均为平行关系</p>
+<h2 id="树的遍历"><a class="markdownIt-Anchor" href="#树的遍历"></a> 树的遍历</h2>
+<h3 id="先根遍历"><a class="markdownIt-Anchor" href="#先根遍历"></a> 先根遍历</h3>
+<p>若树非空，则先访问根结点，再依次对每棵子树进行先根遍历。</p>
+<h3 id="后根遍历"><a class="markdownIt-Anchor" href="#后根遍历"></a> 后根遍历</h3>
+<p>若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。</p>
+<h3 id="层次遍历队列实现"><a class="markdownIt-Anchor" href="#层次遍历队列实现"></a> 层次遍历（队列实现）</h3>
+<ul>
+<li>若树非空，根结点入队</li>
+<li>若队列非空，队头出队并访问，同时将子结点依次入队</li>
+<li>直到队列为空</li>
+</ul>
+<blockquote>
+<p>先根、后根都是深度优先，层次为广度优先</p>
+</blockquote>
+<h2 id="森林的遍历"><a class="markdownIt-Anchor" href="#森林的遍历"></a> 森林的遍历</h2>
+<h3 id="先序遍历森林"><a class="markdownIt-Anchor" href="#先序遍历森林"></a> 先序遍历森林</h3>
+<p>若森林非空：</p>
+<ul>
+<li>访问森林中第一棵树的根结点</li>
+<li>先序遍历第一棵树中根节点的子树森林</li>
+<li>先序遍历其他的</li>
+</ul>
+<p>或将其转化为对应的二叉树</p>
+<h3 id="中序遍历森林"><a class="markdownIt-Anchor" href="#中序遍历森林"></a> 中序遍历森林</h3>
+<p><strong>把森林转化为二叉树后对二叉树进行中序遍历，而不是中序遍历森林</strong></p>
+<p><strong>这其实是对森林中每一棵树的后序遍历</strong></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://lapplandsp.github.io/LapplandSP/2022/06/30/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7%E5%9B%9B%E3%80%91%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" title="【数据结构·四】 树与二叉树" target="_blank" rel="external">https://lapplandsp.github.io/LapplandSP/2022/06/30/【数据结构·四】树与二叉树/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/LapplandSP" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/LapplandSP/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/LapplandSP" target="_blank"><span class="text-dark">LapplandSP</span><small class="ml-1x">Student of TYUT</small></a></h3>
+        <div>情不敢至深，恐大梦一场  卦不敢算尽，畏天道无常</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/LapplandSP/2022/06/19/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%C2%B7C%E3%80%91KMP%E7%AE%97%E6%B3%95/" title="【数据结构·C】 KMP算法"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/LapplandSP/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/LapplandSP/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/LapplandSP" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 LapplandSP
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/LapplandSP/js/plugin.min.js"></script>
+
+
+<script src="/LapplandSP/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/LapplandSP/',
+        CONTENT_URL: '/LapplandSP/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/LapplandSP/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+</body>
+</html>
